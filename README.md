@@ -58,41 +58,39 @@ This is all assuming you have [Node.js](http://nodejs.org/) and [Git](https://he
 _(modified from reveal.js docs)_
 Some reveal.js features, like external Markdown and speaker notes, require that presentations run from a local web server. The following instructions will set up such a server as well as all of the development tasks needed to make edits to the reveal.js source code.
 
-1.  _Make sure you have [Node.js](http://nodejs.org/) 4.0.0 or later installed_
-    Open up your [terminal](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line) and enter:
-    `sh node -v`
+1.  Make sure you have [Node.js](http://nodejs.org/) 4.0.0 or later installed&mdash;to check, open up your [terminal](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line) and enter:
+
+    ```sh
+    node -v
+    ```
 
 1.  Clone this repository
 
     ```sh
-    $ git clone https://github.com/liferay-design/dashboard.git
+    git clone https://github.com/liferay-design/dashboard.git
     ```
 
 1.  Navigate to the reveal.js folder
 
     ```sh
-    $ cd dashboard
+    cd dashboard
     ```
 
 1.  Install dependencies
 
     ```sh
-    $ npm install
+    npm install
     ```
 
 1.  Serve the presentation and monitor source files for changes
 
     ```sh
-    $ npm start
+    npm start
     ```
 
 1.  Open <http://localhost:8000> to view your presentation
 
     You can change the port by using `npm start -- --port=8001`.
-
-### Deploying!
-
-To push your changes live to the web, you need to be added to the Liferay.Design WeDeploy team, _(reach out to [Paul](http://twitter.com/plhnk))_ once you have set that up, simply type: `we deploy -p liferaydotdesign`.
 
 ### Folder Structure
 
@@ -100,6 +98,14 @@ To push your changes live to the web, you need to be added to the Liferay.Design
 * **js/** Like above but for JavaScript
 * **plugin/** Components that have been developed as extensions to reveal.js
 * **lib/** All other third party assets (JavaScript, CSS, fonts)
+
+### Deploying!
+
+To push your changes live to the web, you need to be added to the Liferay.Design WeDeploy team, _(reach out to [Paul](http://twitter.com/plhnk))_ once you have set that up, simply type: `we deploy -p liferaydotdesign`. Please be careful when deploying as it will instantly update the live site (currently available at [http://dashboard-liferaydotdesign.wedeploy.io](http://dashboard-liferaydotdesign.wedeploy.io)).
+
+## Contributing
+
+As always, [creating issues](https://github.com/liferay-design/dashboard/issues) is a great way to help! You can also join the [Dashboard Trello](https://trello.com/b/vC9bDSPE/team-dashboard) to add ideas there, or clone this repo, add some sick stuff and submit a [pull request](https://github.com/liferay-design/dashboard/pulls)!
 
 ## License
 
