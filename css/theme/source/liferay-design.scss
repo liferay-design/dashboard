@@ -1,0 +1,216 @@
+/**
+ * theme for Liferay Design's reveal.js dashboard.
+ *
+ * Copyright (C) Liferay Design 2018
+ */
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+@import "../template/variables";
+// ---------------------------------------------
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600,700);
+// Override theme settings (see ../template/settings.scss)
+$mainFont: $fontFamilyPrimary;
+$headingFont: $fontFamilyPrimary;
+$mainColor: $text;
+$headingColor: $primary;
+$headingTextShadow: none;
+$backgroundColor: #fff;
+// Background generator
+@mixin bodyBackground() {
+  @include radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+section {
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  justify-content: center;
+}
+
+//grid setup
+body {
+  background: lighten($darkestGrey, 4%);
+  display: grid;
+  grid-template-columns: 4% auto 4% 25%;
+  grid-template-rows: 6% 6% auto 8% 8%;
+}
+
+// cool line animation
+section.past {
+  &:before {
+    background: $lightestGrey;
+    content: "";
+    position: absolute;
+    width: 1px;
+    left: 0.05ch;
+    height: 120vmax;
+    transform: scaleY(0);
+    transform-origin: top;
+    -webkit-transform-origin: center;
+    transition: transform 1s ease;
+    transition-delay: s;
+    z-index: -1;
+  }
+}
+
+section.present {
+  &:before {
+    background: $lightestGrey;
+    content: "";
+    position: absolute;
+    width: 1px;
+    left: 0.05ch;
+    height: 120vmax;
+    transform: scaleY(1);
+    transform-origin: center;
+    -webkit-transform-origin: center;
+    transition: transform 1.5s ease-in;
+    transition-delay: 0.2s;
+    z-index: -1;
+  }
+}
+
+section.future {
+  &:before {
+    background: $lightestGrey;
+    content: "";
+    position: absolute;
+    width: 1px;
+    left: 0.05ch;
+    height: 120vmax;
+    transform: scaleY(0);
+    transform-origin: top;
+    -webkit-transform-origin: center;
+    transition: transform 2s ease;
+    transition-delay: 0.2s;
+    z-index: -1;
+  }
+}
+
+section.photo {
+  &:before {
+    display: none;
+  }
+}
+
+.reveal .f1 {
+  font-size: $fontSizeXXLarge;
+}
+
+.reveal .f2 {
+  font-size: $fontSizeXLarge;
+}
+
+.reveal .f3 {
+  font-size: $fontSizeLarge;
+}
+
+.reveal .f4 {
+  font-size: $fontSizeMedium;
+}
+
+.reveal .f5 {
+  font-size: $fontSizeBase;
+}
+
+.reveal .f6 {
+  font-size: $fontSizeSmall;
+}
+
+.reveal .f7 {
+  font-size: $fontSizeXSmall;
+}
+
+.reveal p {
+  font-weight: $fontWeightLight;
+}
+
+.left-sidebar {
+  color: $lightGrey;
+  position: absolute;
+  transform: translateX(calc(calc(100% - 700px) / 1.45)) rotate(-90deg);
+  transform-origin: center;
+  font-size: $fontSizeBase !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5ch;
+  width: 40ch;
+  text-align: center;
+}
+
+section .container {
+  padding-left: 8rem;
+  max-height: 48vh;
+}
+
+.reveal {
+  background: white;
+  box-shadow: 0 1rem 8rem -2rem #000;
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 3;
+}
+
+.reveal .slides {
+  margin: 0 auto;
+}
+
+.twitter-feed {
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 4;
+  overflow: scroll;
+  display: grid;
+  justify-items: center;
+  padding: 0 0.5rem;
+  div {
+    font-family: $fontFamilySecondary;
+    color: $lightGrey;
+    flex: 1;
+    padding: 1rem 0.7rem 1.2rem 0;
+  }
+}
+
+#feed-overlay {
+  position: absolute;
+  right: 0;
+  top: 6%;
+  bottom: 1%;
+  width: 24vw;
+  background: linear-gradient(to bottom, #292b2e 0%, rgba(41, 43, 46, 0) 8%, rgba(41, 43, 46, 0) 84%, #292b2e 92%);
+}
+
+.clock {
+  grid-row: 5 / span 1;
+  font-family: $fontFamilySecondary;
+  grid-column: 2 / span 2;
+  padding: 0.6rem 0.75rem;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $fontSizeMedium;
+  p {
+    padding: 0 0.5rem;
+  }
+  .day {
+    color: lighten($grey, 14%);
+  }
+  .date {
+    color: $grey;
+  }
+  .time {
+    color: darken($grey, 10%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
