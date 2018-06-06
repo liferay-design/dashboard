@@ -3,7 +3,7 @@
 _Built on [Reveal.js](http://revealjs.com)_
 _A framework for easily creating beautiful presentations using HTML._
 
-**_[Check out the live dashboard](http://dashboard-liferaydotdesign.wedeploy.io/)._**
+**_[Check out the live dashboard](http://dashboard.liferay.design/)._**
 
 ## Table of Contents
 
@@ -101,7 +101,7 @@ Some reveal.js features, like external Markdown and speaker notes, require that 
 
 ### Deploying!
 
-To push your changes live to the web, you need to be added to the Liferay.Design WeDeploy team, _(reach out to [Paul](http://twitter.com/plhnk))_ once you have set that up, simply type: `we deploy -p liferaydotdesign`. Please be careful when deploying as it will instantly update the live site (currently available at [http://dashboard-liferaydotdesign.wedeploy.io](http://dashboard-liferaydotdesign.wedeploy.io)).
+To push your changes live to the web, you need to be added to the Liferay.Design WeDeploy team, _(reach out to [Paul](http://twitter.com/plhnk))_ once you have set that up, simply type: `we deploy -p liferaydotdesign`. Please be careful when deploying as it will instantly update the live site (currently available at [http://dashboard.liferay.design](http://dashboard.liferay.design)).
 
 ## Contributing
 

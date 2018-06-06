@@ -214,3 +214,9 @@ section .container {
   background: transparent;
   /* optional: just make scrollbar invisible */
 }
+
+/* rely on source text for "proper" capitalization" for major headlines */
+
+.reveal h1 {
+  text-transform: none !important;
+}
