@@ -25,6 +25,27 @@
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
 
+	<!-- Hide inactive cursor -->
+	<script language="javascript">
+		var inactivityTime = function () {
+			var t;
+			// DOM Events
+			document.onmousemove = resetTimer;
+			document.onkeypress = resetTimer;
+
+			function hideCursor() {
+				document.body.style.cursor = "none";
+			}
+
+			function resetTimer() {
+				clearTimeout(t);
+				t = setTimeout(hideCursor, 2000) // 2 seconds
+				document.body.style.cursor = "default";
+			}
+		};
+
+		inactivityTime();
+	</script>
 	<!-- Scrolling Twitter Feed -->
 	<script language="javascript">
 		ScrollRate = 100;
@@ -151,7 +172,7 @@
 			loop: true,
 			shuffle: true,
 			autoSlide: 8000,
-			// autoSlide: 0,
+			//autoSlide: 0,
 			backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
 			transitionSpeed: 'default', // default/fast/slow
 			transition: 'fade', // none/fade/slide/convex/concave/zoom
