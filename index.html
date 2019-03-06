@@ -1,270 +1,384 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- refresh the page every 60 seconds -->
+    <meta http-equiv="refresh" content="60" />
 
-<head>
-	<!-- refresh the page every 60 seconds -->
-	<meta http-equiv="refresh" content="60">
+    <meta charset="utf-8" />
 
-	<meta charset="utf-8">
+    <title>Design Dashboard</title>
 
-	<title>Design Dashboard</title>
+    <link rel="apple-touch-icon" href="touch-icon-ipad-retina.png" />
 
-	<link rel="apple-touch-icon" href="touch-icon-ipad-retina.png">
+    <meta
+      name="description"
+      content="The public dashboard for Liferay's Design Team in the LA Headquarters"
+    />
+    <meta name="author" content="Paul Hanaoka" />
 
-	<meta name="description" content="The public dashboard for Liferay's Design Team in the LA Headquarters">
-	<meta name="author" content="Paul Hanaoka">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/liferay-design.css" id="theme" />
 
-	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/liferay-design.css" id="theme">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
 
-	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Hide inactive cursor -->
+    <script language="javascript">
+      var inactivityTime = function() {
+        var t;
+        // DOM Events
+        document.onmousemove = resetTimer;
+        document.onkeypress = resetTimer;
 
-	<!-- Hide inactive cursor -->
-	<script language="javascript">
-		var inactivityTime = function () {
-			var t;
-			// DOM Events
-			document.onmousemove = resetTimer;
-			document.onkeypress = resetTimer;
+        function hideCursor() {
+          document.body.style.cursor = "none";
+        }
 
-			function hideCursor() {
-				document.body.style.cursor = "none";
-			}
+        function resetTimer() {
+          clearTimeout(t);
+          t = setTimeout(hideCursor, 2000); // 2 seconds
+          document.body.style.cursor = "default";
+        }
+      };
 
-			function resetTimer() {
-				clearTimeout(t);
-				t = setTimeout(hideCursor, 2000) // 2 seconds
-				document.body.style.cursor = "default";
-			}
-		};
+      inactivityTime();
+    </script>
+    <!-- Scrolling Twitter Feed -->
+    <script language="javascript">
+      ScrollRate = 100;
 
-		inactivityTime();
-	</script>
-	<!-- Scrolling Twitter Feed -->
-	<script language="javascript">
-		ScrollRate = 100;
+      function scrollDiv_init() {
+        DivElmnt = document.getElementById("scrolling-twitter-feed");
+        ReachedMaxScroll = false;
 
-		function scrollDiv_init() {
-			DivElmnt = document.getElementById('scrolling-twitter-feed');
-			ReachedMaxScroll = false;
+        DivElmnt.scrollTop = 0;
+        PreviousScrollTop = 0;
 
-			DivElmnt.scrollTop = 0;
-			PreviousScrollTop = 0;
+        ScrollInterval = setInterval("scrollDiv()", ScrollRate);
+      }
 
-			ScrollInterval = setInterval('scrollDiv()', ScrollRate);
-		}
+      function scrollDiv() {
+        if (!ReachedMaxScroll) {
+          DivElmnt.scrollTop = PreviousScrollTop;
+          PreviousScrollTop++;
 
-		function scrollDiv() {
+          ReachedMaxScroll =
+            DivElmnt.scrollTop >= DivElmnt.scrollHeight - DivElmnt.offsetHeight;
+        } else {
+          ReachedMaxScroll = DivElmnt.scrollTop == 0 ? false : true;
 
-			if (!ReachedMaxScroll) {
-				DivElmnt.scrollTop = PreviousScrollTop;
-				PreviousScrollTop++;
+          DivElmnt.scrollTop = PreviousScrollTop;
+          PreviousScrollTop--;
+        }
+      }
+    </script>
+  </head>
 
-				ReachedMaxScroll = DivElmnt.scrollTop >= (DivElmnt.scrollHeight - DivElmnt.offsetHeight);
-			} else {
-				ReachedMaxScroll = (DivElmnt.scrollTop == 0) ? false : true;
+  <body onLoad="scrollDiv_init()">
+    <div class="clock"></div>
 
-				DivElmnt.scrollTop = PreviousScrollTop;
-				PreviousScrollTop--;
-			}
-		}
-	</script>
-
-</head>
-
-<body onLoad="scrollDiv_init()">
-	<div class="clock"></div>
-
-	<div class="reveal slide-refresh">
-		<!-- Any section element inside of this container is displayed as a slide -->
-		<div class="slides">
-			<section class="photo" data-transition-speed="slow" data-background-transition="fade" data-background="https://source.unsplash.com/collection/825250/1920x1200">
-			</section>
-			<section>
-				<div class="left-sidebar">01/03</div>
-				<div class="container">
-					<h1 class="f1">Focus on Delivering Value to&nbsp;Customers</h1>
-					<p class="f3">Through products that solve their problems</p>
-				</div>
-			</section>
-			<section>
-				<div class="left-sidebar">02/03</div>
-				<div class="container">
-					<h1 class="f1">Learn to Say No</h1>
-					<p class="f3">To non-strategic projects and distracting&nbsp;endeavors</p>
-				</div>
-			</section>
-			<section>
-				<div class="left-sidebar">03/03</div>
-				<div class="container">
-					<h1 class="f1">Stop Wasting Time on Ideological Battles</h1>
-					<p class="f3">That don't ultimately deliver customer value</p>
-				</div>
-			</section>
-			<section>
-				<div class="left-sidebar">Design Twitter</div>
-				<div class="container">
-					<a data-tweet-limit="1" data-chrome="noheader nofooter noborders transparent" class="twitter-timeline" href="https://twitter.com/plhnk/lists/much-design-wow?ref_src=twsrc%5Etfw">A Twitter List by plhnk</a>
-					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-				</div>
-			</section>
-			<section>
-				<div class="left-sidebar">Liferay Twitter</div>
-				<div class="container">
-					<a data-tweet-limit="1" data-chrome="noheader nofooter noborders transparent" class="twitter-timeline" href="https://twitter.com/plhnk/lists/liferay?ref_src=twsrc%5Etfw">A Twitter List by plhnk</a>
-					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-				</div>
-			</section>
-			<section>
-				<div class="left-sidebar">Frontend Twitter</div>
-				<div class="container">
-					<a data-tweet-limit="1" data-chrome="noheader nofooter noborders transparent" class="twitter-timeline" href="https://twitter.com/plhnk/lists/such-frontend?ref_src=twsrc%5Etfw">A Twitter List by plhnk</a>
-					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-				</div>
-			</section>
-			<!-- this autoslide needs to be as long as the google slideshow lasts -->
-			<!-- <section data-autoslide="">
+    <div class="reveal slide-refresh">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section
+          class="photo"
+          data-transition-speed="slow"
+          data-background-transition="fade"
+          data-background="https://source.unsplash.com/collection/825250/1920x1200"
+        ></section>
+        <section>
+          <div class="left-sidebar">01/03</div>
+          <div class="container">
+            <h1 class="f1">Focus on Delivering Value to&nbsp;Customers</h1>
+            <p class="f3">Through products that solve their problems</p>
+          </div>
+        </section>
+        <section>
+          <div class="left-sidebar">02/03</div>
+          <div class="container">
+            <h1 class="f1">Learn to Say No</h1>
+            <p class="f3">
+              To non-strategic projects and distracting&nbsp;endeavors
+            </p>
+          </div>
+        </section>
+        <section>
+          <div class="left-sidebar">03/03</div>
+          <div class="container">
+            <h1 class="f1">Stop Wasting Time on Ideological Battles</h1>
+            <p class="f3">That don't ultimately deliver customer value</p>
+          </div>
+        </section>
+        <section>
+          <div class="left-sidebar">Design Twitter</div>
+          <div class="container">
+            <a
+              data-tweet-limit="1"
+              data-chrome="noheader nofooter noborders transparent"
+              class="twitter-timeline"
+              href="https://twitter.com/liferaydesign/lists/industry-leaders?ref_src=twsrc%5Etfw"
+              >Industry Leaders Twitter Feed</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
+        </section>
+        <section>
+          <div class="left-sidebar">Liferay Twitter</div>
+          <div class="container">
+            <a
+              data-tweet-limit="1"
+              data-chrome="noheader nofooter noborders transparent"
+              class="twitter-timeline"
+              href="https://twitter.com/liferaydesign/lists/liferay?ref_src=twsrc%5Etfw"
+              >An aggregate of all the various Liferay Twitter accounts</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
+        </section>
+        <section>
+          <div class="left-sidebar">Frontend Twitter</div>
+          <div class="container">
+            <a
+              data-tweet-limit="1"
+              data-chrome="noheader nofooter noborders transparent"
+              class="twitter-timeline"
+              href="https://twitter.com/liferaydesign/lists/should-designers-code?ref_src=twsrc%5Etfw"
+              >Frontend Developers who Design</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
+        </section>
+        <!-- This is Marketing's Dashboard — needs to be configured on their side -->
+        <!-- <section>
+          <script
+            type="text/javascript"
+            src="https://reports.liferay.com/javascripts/api/viz_v1.js"
+          ></script>
+          <div
+            class="tableauPlaceholder"
+            style="width: 1200px; height: 2050px;"
+          >
+            <object
+              class="tableauViz"
+              width="1200"
+              height="2050"
+              style="display:none;"
+            >
+              <param
+                name="host_url"
+                value="https%3A%2F%2Freports.liferay.com%2F"/>
+              <param name="embed_code_version" value="3"/>
+              <param name="site_root" value="&#47;t&#47;sales-marketing"/>
+              <param name="name" value="WeeklyMetricsBrief&#47;GoalTracking"/>
+              <param name="tabs" value="yes"/>
+              <param name="toolbar" value="yes"/>
+              <param name="showAppBanner" value="false"/>
+              <param name="filter" value="iframeSizedToWindow=true"
+            /></object>
+          </div>
+        </section> -->
+        <!-- this autoslide needs to be as long as the google slideshow lasts -->
+        <!-- <section data-autoslide="">
 				<div style="overflow:hidden; margin-left: calc(-.5 * calc(73vw - 659px)); width: 76vw;">
 					<iframe style="position: relative; left: -1px; top: -20px;" src="https://docs.google.com/presentation/d/e/2PACX-1vTAJfDzn9hhBXuv5ovyBPHEboaJYsmWaA4Dm3LSYBbgB7ZttEhw4qIbPEq47bJq877QgIdV0E76thsi/embed?start=true&loop=false&delayms=5000"
 					    frameborder="0" width="1094" height="740" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 				</div>
 			</section> -->
-		</div>
-	</div>
+      </div>
+    </div>
 
-	<div id="feed-overlay"></div>
-	<div id="scrolling-twitter-feed" class="twitter-feed">
-		<div>
-			<a data-theme="dark" data-width="326" data-height="100" data-tweet-limit="1" data-chrome="noheader nofooter noborders transparent"
-			    class="twitter-timeline" href="https://twitter.com/Liferay_UX?ref_src=twsrc%5Etfw">Tweets by Liferay_UX</a>
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</div>
-		<div>
-			<a data-theme="dark" data-width="326" data-height="100" data-tweet-limit="1" data-chrome="noheader nofooter noborders transparent"
-			    class="twitter-timeline" href="https://twitter.com/Liferay?ref_src=twsrc%5Etfw">Tweets by Liferay</a>
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</div>
-		<div>
-			<a data-theme="dark" data-width="326" data-height="100" data-tweet-limit="3" data-chrome="noheader nofooter noborders transparent"
-			    class="twitter-timeline" href="https://twitter.com/plhnk/lists/liferay-design?ref_src=twsrc%5Etfw">A Twitter List by plhnk</a>
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</div>
-	</div>
+    <div id="feed-overlay"></div>
+    <div id="scrolling-twitter-feed" class="twitter-feed">
+      <div>
+        <a
+          data-theme="dark"
+          data-width="326"
+          data-height="100"
+          data-tweet-limit="1"
+          data-chrome="noheader nofooter noborders transparent"
+          class="twitter-timeline"
+          href="https://twitter.com/liferaydesign?ref_src=twsrc%5Etfw"
+          >Tweets by Liferay Design</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+      <div>
+        <a
+          data-theme="dark"
+          data-width="326"
+          data-height="100"
+          data-tweet-limit="1"
+          data-chrome="noheader nofooter noborders transparent"
+          class="twitter-timeline"
+          href="https://twitter.com/Liferay?ref_src=twsrc%5Etfw"
+          >Tweets by Liferay</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+      <div>
+        <a
+          data-theme="dark"
+          data-width="326"
+          data-height="100"
+          data-tweet-limit="3"
+          data-chrome="noheader nofooter noborders transparent"
+          class="twitter-timeline"
+          href="https://twitter.com/liferaydesign/lists/liferay-design?ref_src=twsrc%5Etfw"
+          >List of Liferay Designers</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+    </div>
 
-	<script src="lib/js/head.min.js"></script>
-	<script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-	<script>
-		// More info https://github.com/hakimel/reveal.js#configuration
-		Reveal.initialize({
-			width: 700,
-			height: 700,
-			controls: false,
-			progress: false,
-			history: true,
-			center: false,
-			loop: true,
-			shuffle: true,
-			autoSlide: 8000,
-			//autoSlide: 0,
-			backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
-			transitionSpeed: 'default', // default/fast/slow
-			transition: 'fade', // none/fade/slide/convex/concave/zoom
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 700,
+        height: 700,
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        loop: true,
+        shuffle: true,
+        autoSlide: 8000,
+        //autoSlide: 0,
+        backgroundTransition: "fade", // none/fade/slide/convex/concave/zoom
+        transitionSpeed: "default", // default/fast/slow
+        transition: "fade", // none/fade/slide/convex/concave/zoom
 
-			// More info https://github.com/hakimel/reveal.js#dependencies
-			dependencies: [{
-					src: 'lib/js/classList.js',
-					condition: function () {
-						return !document.body.classList;
-					}
-				},
-				{
-					src: 'plugin/markdown/marked.js',
-					condition: function () {
-						return !!document.querySelector('[data-markdown]');
-					}
-				},
-				{
-					src: 'plugin/markdown/markdown.js',
-					condition: function () {
-						return !!document.querySelector('[data-markdown]');
-					}
-				},
-				{
-					src: 'plugin/highlight/highlight.js',
-					async: true,
-					callback: function () {
-						hljs.initHighlightingOnLoad();
-					}
-				},
-				{
-					src: 'plugin/search/search.js',
-					async: true
-				},
-				{
-					src: 'plugin/zoom-js/zoom.js',
-					async: true
-				},
-				{
-					src: 'plugin/notes/notes.js',
-					async: true
-				}
-			]
-		});
-	</script>
-	<!-- Clock / Calendar in the Footer -->
-	<script>
-		function clock() { // Create a new Date object and assign it to a variable called "time".
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          {
+            src: "lib/js/classList.js",
+            condition: function() {
+              return !document.body.classList;
+            }
+          },
+          {
+            src: "plugin/markdown/marked.js",
+            condition: function() {
+              return !!document.querySelector("[data-markdown]");
+            }
+          },
+          {
+            src: "plugin/markdown/markdown.js",
+            condition: function() {
+              return !!document.querySelector("[data-markdown]");
+            }
+          },
+          {
+            src: "plugin/highlight/highlight.js",
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          },
+          {
+            src: "plugin/search/search.js",
+            async: true
+          },
+          {
+            src: "plugin/zoom-js/zoom.js",
+            async: true
+          },
+          {
+            src: "plugin/notes/notes.js",
+            async: true
+          }
+        ]
+      });
+    </script>
+    <!-- Clock / Calendar in the Footer -->
+    <script>
+      function clock() {
+        // Create a new Date object and assign it to a variable called "time".
 
-			var weekdays = new Array(7);
-			weekdays[0] = "Sunday";
-			weekdays[1] = "Monday";
-			weekdays[2] = "Tuesday";
-			weekdays[3] = "Wednesday";
-			weekdays[4] = "Thursday";
-			weekdays[5] = "Friday";
-			weekdays[6] = "Saturday";
+        var weekdays = new Array(7);
+        weekdays[0] = "Sunday";
+        weekdays[1] = "Monday";
+        weekdays[2] = "Tuesday";
+        weekdays[3] = "Wednesday";
+        weekdays[4] = "Thursday";
+        weekdays[5] = "Friday";
+        weekdays[6] = "Saturday";
 
-			var current_date = new Date();
+        var current_date = new Date();
 
-			weekday_value = current_date.getDay();
+        weekday_value = current_date.getDay();
 
-			var time = new Date(),
+        var time = new Date(),
+          year = time.getFullYear(),
+          month = time.getMonth() + 1,
+          day = time.getDate(),
+          hours = time.getHours(),
+          minutes = time.getMinutes(),
+          seconds = time.getSeconds();
 
-				year = time.getFullYear(),
+        document.querySelectorAll(".clock")[0].innerHTML =
+          "<p class='day'>" +
+          weekdays[weekday_value] +
+          "</p><p class='date'>" +
+          today(year) +
+          "-" +
+          today(month) +
+          "-" +
+          today(day) +
+          "</p>" +
+          "<p class='time'>" +
+          today(hours) +
+          ":" +
+          today(minutes) +
+          ":" +
+          today(seconds) +
+          "</p>";
 
-				month = time.getMonth() + 1,
-
-				day = time.getDate(),
-
-				hours = time.getHours(),
-
-				minutes = time.getMinutes(),
-
-				seconds = time.getSeconds();
-
-			document.querySelectorAll('.clock')[0].innerHTML = "<p class='day'>" + weekdays[weekday_value] +
-				"</p><p class='date'>" + today(year) + "-" +
-				today(month) +
-				"-" + today(day) + "</p>" + "<p class='time'>" + today(hours) + ":" + today(minutes) + ":" + today(
-					seconds) + "</p>";
-
-			function today(standIn) {
-				if (standIn < 10) {
-					standIn = '0' + standIn;
-				}
-				return standIn;
-			}
-		}
-		setInterval(clock, 1000);
-	</script>
-
-</body>
-
+        function today(standIn) {
+          if (standIn < 10) {
+            standIn = "0" + standIn;
+          }
+          return standIn;
+        }
+      }
+      setInterval(clock, 1000);
+    </script>
+  </body>
 </html>
