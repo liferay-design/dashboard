@@ -15,8 +15,6 @@
 /* ---------- Font sizes ---------- */
 /* ---------- Font weights ---------- */
 /* ---------- Padding & Margin ---------- */
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600,700);
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -304,6 +302,11 @@ section.present:before {
   transition-delay: 0.2s;
   z-index: -1; }
 
+section.tableau-slide {
+  margin-left: -200px;
+  margin-top: -160px;
+  height: 160%; }
+
 section.future:before {
   background: #e7e7e7;
   content: "";
@@ -370,7 +373,7 @@ section .container {
   margin: 0 auto; }
 
 .twitter-feed {
-  animation: feedRefresh .8s ease-in-out;
+  animation: feedRefresh 0.8s ease-in-out;
   grid-column: 4 / span 1;
   grid-row: 2 / span 4;
   overflow: scroll;
@@ -421,7 +424,7 @@ section .container {
   text-transform: none !important; }
 
 .slide-refresh {
-  animation: slideRefresh .6s ease-in-out; }
+  animation: slideRefresh 0.6s ease-in-out; }
 
 @keyframes slideRefresh {
   0% {
