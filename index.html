@@ -365,14 +365,15 @@
           seconds = time.getSeconds();
 
         document.querySelectorAll(".clock")[0].innerHTML =
-          "<p class='day'>" +
-          weekdays[weekday_value] +
-          "</p><p class='date'>" +
+          "<p class='date'>" +
           today(year) +
           "-" +
           today(month) +
           "-" +
           today(day) +
+          "</p>" +
+          "<p class='day'>" +
+          weekdays[weekday_value] +
           "</p>" +
           "<p class='time'>" +
           today(hours) +
