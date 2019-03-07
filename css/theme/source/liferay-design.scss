@@ -10,18 +10,19 @@
 @import "../template/variables";
 // ---------------------------------------------
 // Include theme-specific fonts
-@import url(
-  https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,
-  400,
-  600,
-  700
-);
-@import url(
-  https://fonts.googleapis.com/css?family=Source+Code+Pro:300,
-  400,
-  600,
-  700
-);
+// @import url(
+//   https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,
+//   400,
+//   600,
+//   700
+// );
+
+// @import url(
+//   https://fonts.googleapis.com/css?family=Source+Code+Pro:300,
+//   400,
+//   600,
+//   700
+// );
 // Override theme settings (see ../template/settings.scss)
 $mainFont: $fontFamilyPrimary;
 $headingFont: $fontFamilyPrimary;
@@ -88,7 +89,9 @@ section.present {
 }
 
 section.tableau-slide {
-  margin-left: calc(calc(100% - 700px) / 2);
+  margin-left: -200px;
+  margin-top: -160px;
+  height: 160%;
 }
 
 section.future {
